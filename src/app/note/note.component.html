@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h1 class="text-center mb-4">
+            Note APP
+        </h1>
+        <div class='mb-3'>
+            <input type="text" class="form-control" placeholder="header" [(ngModel)]="Theme">
+
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" rows="4" placeholder="Enter your note here" [(ngModel)]="Topic"></textarea>
+
+        </div>
+        <button  class="btn btn-dark w-100" (click)="createNote()">SAVE</button>
+    </div>
+
+
+
+    <div class="mt-4">
+        <h3>your notes</h3>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between  ps-5 align-items-center" *ngFor="let note of notes">
+                <span>{{note.title}}</span>
+                <div>
+                    <a routerLink="{{note.id}}" class="btn btn-outline-primary btn-lg">Saved notes</a>
+                    <button class="btn btn-small btn-primary" (click)="edit()">Edit</button>
+                    <button class="btn btn-small btn-secondary" (click)="delete()">Delete</button>
+                </div>
+            </li>
+        </ul>
+        
+        
+    </div>
+    
+</div>
+
